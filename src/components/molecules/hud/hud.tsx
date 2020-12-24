@@ -12,7 +12,7 @@ interface ImageTextProps {
 const Hud = (props: ImageTextProps): JSX.Element => {
 	const { image, text, icons } = props;
 	return (
-		<div className="flex flex-row items-center ">
+		<div className="flex flex-row items-center justify-start">
 			<MyImage source={image.source} type={image.type} size={image.size}/>
 			<div className="flex flex-col items-start">
 				<MyText text={text.text} type={text.type} weight={text.weight}/>

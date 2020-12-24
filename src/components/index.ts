@@ -4,6 +4,9 @@ export { default as MyImage } from "./atoms/image/image";
 // text
 export { default as MyText } from "./atoms/text/text";
 
+// link
+export { default as Link } from "./atoms/link/link";
+
 // molecules
 export { default as Hud } from "./molecules/hud/hud";
 export { default as Social } from "./molecules/social/social";

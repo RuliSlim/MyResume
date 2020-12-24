@@ -36,10 +36,16 @@ const Appbar = (): JSX.Element => {
 	];
 
 	return (
-		<div className="flex flex-row justify-around items-center w-full">
-			<Hud image={image} text={text} icons={icons}/>
-			<Social icons={social}/>
-			<Connection />
+		<div className="flex flex-row justify-start items-center">
+			<div className="flex-1">
+				<Hud image={image} text={text} icons={icons}/>
+			</div>
+			<div className="flex-1">
+				<Social icons={social}/>
+			</div>
+			<div className="flex-1">
+				<Connection />
+			</div>
 		</div>
 	);
 };

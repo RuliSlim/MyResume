@@ -16,7 +16,10 @@ const MyText = (props: MyTextProps): JSX.Element => {
 			name += "text-2xl";
 			break;
 		case "normal":
-			name += "text-base";
+			name += "text-xs sm:text-base";
+			break;
+		case "link":
+			name += "text-xxs sm:text-base";
 			break;
 		}
 
