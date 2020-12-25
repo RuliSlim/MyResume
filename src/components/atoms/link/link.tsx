@@ -7,10 +7,10 @@ interface LinkProps {
 }
 
 const Link = (props: LinkProps): JSX.Element => {
-	const { text } = props;
+	const { text, isActive } = props;
 
 	return (
-		<div className="mx-auto bg-gray-100 rounded-full py-1 px-2">
+		<div className={`mx-auto rounded-full py-1 px-2 ${isActive && "bg-gray-100"}`}>
 			<MyText text={text} type="link" weight="normal" />
 		</div>
 	);

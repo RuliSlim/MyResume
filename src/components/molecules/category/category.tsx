@@ -17,7 +17,7 @@ const Category = (): JSX.Element => {
 			<div className="flex flex-row items-center w-full">
 				{links.map((el, key) => (
 					<div className="flex-1 text-center" key={el + "-" + key}>
-						<Link text={el} isActive={true} />
+						<Link text={el} isActive={el === "My games"} />
 					</div>
 				))}
 			</div>
