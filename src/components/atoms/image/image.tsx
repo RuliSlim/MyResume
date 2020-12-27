@@ -11,6 +11,8 @@ const MyImage = (props: MyImageProps): JSX.Element => {
 			name = "rounded-full h-10 w-10 md:w-16 md:h-16 flex items-center justify-center";
 		} else if (type === "icon") {
 			name = "h-6 w-6 md:h-10 md:w-10 flex items-center justify-center";
+		} else {
+			name = "rounded-3xl object-cover hover:object-contain h-card w-80 max-w-none transition duration-500 ease-in-out transform hover:translate-x-80 hover:scale-200 hover:z-10";
 		}
 
 		switch (size) {

@@ -5,7 +5,10 @@ module.exports = {
 		extend: {
 			fontSize: {
 				xxs: "0.5rem"
-			}
+			},
+		},
+		height: {
+			card: "20rem"
 		},
 		container: (theme) => ({
 			padding: {
@@ -15,9 +18,18 @@ module.exports = {
 				xl: theme("spacing.8"),
 			},
 		}),
+		scale: {
+			"200": "2",
+			"250": "2.5"
+		}
 	},
 	variants: {
-		extend: {},
+		extend: {
+			height: [ "hover", "focus" ],
+			width: [ "hover", "focus" ],
+			objectFit: [ "hover", "focus" ],
+			zIndex: [ "hover", "focus", "active" ]
+		},
 	},
 	plugins: [],
 };
