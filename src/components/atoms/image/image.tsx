@@ -2,7 +2,7 @@ import React from "react";
 import { MyImageProps } from "../../../interfaces/image";
 
 const MyImage = (props: MyImageProps): JSX.Element => {
-	const { source, type, size } = props;
+	const { source, type, size, id } = props;
 	const [ className, setClassName ] = React.useState<string>("");
 
 	const createClassName = (): void => {
@@ -10,9 +10,12 @@ const MyImage = (props: MyImageProps): JSX.Element => {
 		if (type === "avatar") {
 			name = "rounded-full h-10 w-10 md:w-16 md:h-16 flex items-center justify-center";
 		} else if (type === "icon") {
-			name = "h-6 w-6 md:h-10 md:w-10 flex items-center justify-center";
+			name = "h-4 w-4 md:h-8 md:w-8 flex items-center justify-center";
 		} else {
-			name = "rounded-3xl object-cover hover:object-contain h-card w-80 max-w-none transition duration-500 ease-in-out transform hover:translate-x-80 hover:scale-200 hover:z-10";
+			name = "rounded-3xl object-fill h-64 w-48 md:h-card md:w-64 max-w-none";
+			if (id && id === 1) {
+				name += "h-80 w-56 md:h-card md:w-80 max-w-none";
+			}
 		}
 
 		switch (size) {
@@ -35,7 +38,7 @@ const MyImage = (props: MyImageProps): JSX.Element => {
 
 	React.useEffect(() => {
 		createClassName();
-	}, []);
+	}, [ id ]);
 
 	return (
 		<img src={source} className={className}/>

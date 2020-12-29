@@ -8,7 +8,7 @@ module.exports = {
 			},
 		},
 		height: {
-			card: "20rem"
+			card: "20rem",
 		},
 		container: (theme) => ({
 			padding: {
@@ -21,6 +21,9 @@ module.exports = {
 		scale: {
 			"200": "2",
 			"250": "2.5"
+		},
+		outline: {
+			blue: [ "3px solid #0000ff", "0px" ],
 		}
 	},
 	variants: {
@@ -28,7 +31,11 @@ module.exports = {
 			height: [ "hover", "focus" ],
 			width: [ "hover", "focus" ],
 			objectFit: [ "hover", "focus" ],
-			zIndex: [ "hover", "focus", "active" ]
+			zIndex: [ "hover", "focus", "active" ],
+			borderColor: [ "focus" ],
+			borderWidth: [ "focus" ],
+			boxShadow: [ "focus" ],
+			outline: [ "focus" ]
 		},
 	},
 	plugins: [],

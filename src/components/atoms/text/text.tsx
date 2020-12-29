@@ -10,10 +10,10 @@ const MyText = (props: MyTextProps): JSX.Element => {
 
 		switch(type) {
 		case "caption":
-			name += "text-sm";
+			name += "text-m italic";
 			break;
 		case "title":
-			name += "text-2xl";
+			name += "text-3xl";
 			break;
 		case "normal":
 			name += "text-xs sm:text-base";

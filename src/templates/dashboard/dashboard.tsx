@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
-import { Card } from "../../components";
+import { Card, Description } from "../../components";
 import Category from "../../components/molecules/category/category";
+//@ts-ignore
+import { AnimateOnChange, easings } from "react-animation";
+
+const style = {
+	animation: `pop-in ${easings.easeOutExpo} 5000ms forwards`
+};
 
 const Appbar = React.lazy(() => import("../../components/molecules/appbar/appbar"));
 
@@ -33,15 +40,23 @@ const Dashboard = (): JSX.Element => {
 			<div className="my-10 container mx-auto">
 				<Category />
 			</div>
-			<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-60">
+			<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-48 items-center">
 				{data.map((el, idx) => (
 					<React.Fragment key={el}>
-						<Card key={el} id={idx} navigate={navigate}/>
-						{el}
+						<AnimateOnChange
+							animationIn="popIn"
+							animationOut="popOut"
+							duration={5000}
+							style={style}
+						>
+							<Card key={el} id={idx} navigate={navigate}/>
+						</AnimateOnChange>
 					</React.Fragment>
 				))}
 			</div>
-			<div className="container mx-auto">desc</div>
+			<div className="container mx-auto">
+				<Description />
+			</div>
 		</div>
 	);
 };

@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 import { Link } from "../..";
+//@ts-ignore
+import { AnimateOnChange } from "react-animation";
 
 const Category = (): JSX.Element => {
 
@@ -17,7 +20,13 @@ const Category = (): JSX.Element => {
 			<div className="flex flex-row items-center w-full">
 				{links.map((el, key) => (
 					<div className="flex-1 text-center" key={el + "-" + key}>
-						<Link text={el} isActive={el === "My games"} />
+						<AnimateOnChange
+							animationIn="bounceIn"
+							animationOut="bounceOut"
+							duration={1000}
+						>
+							<Link text={el} isActive={el === "My games"} />
+						</AnimateOnChange>
 					</div>
 				))}
 			</div>
