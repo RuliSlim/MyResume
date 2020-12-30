@@ -12,9 +12,9 @@ const MyImage = (props: MyImageProps): JSX.Element => {
 		} else if (type === "icon") {
 			name = "h-4 w-4 md:h-8 md:w-8 flex items-center justify-center";
 		} else {
-			name = "rounded-3xl object-fill h-64 w-48 md:h-card md:w-64 max-w-none";
+			name = "rounded-3xl object-contain h-64 w-48 md:w-64 max-w-none";
 			if (id && id === 1) {
-				name += "h-80 w-56 md:h-card md:w-80 max-w-none";
+				name += "h-80 w-56 md:w-96 max-w-none";
 			}
 		}
 
