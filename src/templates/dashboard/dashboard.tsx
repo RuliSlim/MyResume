@@ -24,7 +24,6 @@ const Dashboard = (): JSX.Element => {
 		if (e.which === 37) {
 			dispatch(changeFocus("NEXT"));
 		} else if (e.which === 39) {
-			console.log("masuk sini ga sih??");
 			dispatch(changeFocus("PREV"));
 		}
 	};
@@ -41,13 +40,13 @@ const Dashboard = (): JSX.Element => {
 		return <div>loading</div>;
 	} else {
 		return (
-			<div className="flex flex-col pt-5 md:pt-14 space-y-5 overflow-x-hidden">
-				<div className="container mx-auto pr-2">
+			<div className="flex flex-col pt-2 md:pt-14 space-y-10 overflow-x-hidden h-screen">
+				<div className="container mx-auto p-5 md:p-0">
 					<React.Suspense fallback={<div>Loading...</div>}>
 						<Appbar />
 					</React.Suspense>
 				</div>
-				<div className="my-10 container mx-auto">
+				<div className="my-10 container mx-auto p-5 md:p-0">
 					<Category />
 				</div>
 				<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-48 items-center">
@@ -59,12 +58,14 @@ const Dashboard = (): JSX.Element => {
 								duration={5000}
 								style={style}
 							>
-								<Card id={idx} navigate={navigate} data={el}/>
+								<button onClick={() => dispatch(changeFocus("ONCLICK", el))}>
+									<Card id={idx} navigate={navigate} data={el}/>
+								</button>
 							</AnimateOnChange>
 						</React.Fragment>
 					))}
 				</div>
-				<div className="container mx-auto">
+				<div className="container mx-auto p-5 md:p-0">
 					<Description data={data.projects[1]}/>
 				</div>
 			</div>

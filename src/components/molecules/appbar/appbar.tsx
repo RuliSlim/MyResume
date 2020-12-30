@@ -11,22 +11,37 @@ const Appbar = (): JSX.Element => {
 	};
 
 	const text: MyTextProps = {
-		text: "totalslim",
-		type: "normal",
+		text: "Ruli",
+		type: "title",
 		weight: "normal"
 	};
 
 	const icons: MyImageProps[] = [
 		{
 			size: "s",
-			source: "https://www.clipartmax.com/png/middle/233-2336080_ps4-june-refresh-playstation-plus-logo-01-us-ps-plus-icon-png.png",
+			source: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
 			type: "icon"
 		},
 		{
 			size: "s",
-			source: "https://gmedia.playstation.com/is/image/SIEPDC/ps-now-blue-icon-icon-01-22sep20?$native--t$",
+			source: "https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png",
 			type: "icon"
-		}
+		},
+		{
+			size: "s",
+			source: "https://seeklogo.com/images/V/vuejs-logo-17D586B587-seeklogo.com.png",
+			type: "icon"
+		},
+		{
+			size: "s",
+			source: "https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png",
+			type: "icon"
+		},
+		{
+			size: "s",
+			source: "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png",
+			type: "icon"
+		},
 	];
 
 	const social: string[] = [
@@ -40,10 +55,10 @@ const Appbar = (): JSX.Element => {
 			<div className="flex-1">
 				<Hud image={image} text={text} icons={icons}/>
 			</div>
-			<div className="flex-1">
+			{/* <div className="flex-1">
 				<Social icons={social}/>
-			</div>
-			<div className="flex-1">
+			</div> */}
+			<div className="">
 				<Connection />
 			</div>
 		</div>

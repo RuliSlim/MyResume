@@ -5,17 +5,33 @@ import { Link } from "../..";
 import { AnimateOnChange } from "react-animation";
 
 const Category = (): JSX.Element => {
+	const [ links, setLinks ] = React.useState<ICategoryState[]>([
+		{
+			title: "Bio",
+			isActive: false,
+		},
+		{
+			title: "My Projects",
+			isActive: true
+		},
+		{
+			title: "Contact",
+			isActive: false
+		}
+	]);
 
-	const links: string[] = [
-		"Store",
-		"My games",
-		"Media",
-		"Library",
-		"Settings"
-	];
+	const onClick = (link: string) => (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		const idx = links.findIndex(el => el.title === link);
+		setLinks((prev) => {
+			const newArr = prev.slice();
+			newArr.forEach((el) => el.isActive = false);
+			newArr[idx].isActive = true;
+			return newArr;
+		});
+	};
 
 	return (
-		<div className="flex flex-row items-center justify-between w-1/10 md:w-1/2">
+		<div className="flex flex-row items-center justify-between w-1/2 md:w-1/3">
 			<i className="fas fa-chevron-left flex-1"></i>
 			<div className="flex flex-row items-center w-full">
 				{links.map((el, key) => (
@@ -25,7 +41,7 @@ const Category = (): JSX.Element => {
 							animationOut="bounceOut"
 							duration={1000}
 						>
-							<Link text={el} isActive={el === "My games"} />
+							<Link text={el.title} isActive={el.isActive} onClick={onClick} />
 						</AnimateOnChange>
 					</div>
 				))}

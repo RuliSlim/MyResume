@@ -7,8 +7,11 @@ const App = (): JSX.Element => {
 	const data: ProjectState = useSelector((state: RootStore) => state.project);
 	return (
 		<React.Fragment>
-			<div className="bg-center bg-no-repeat object-fill" style={{ backgroundImage: `url(${data?.projects[1]?.images[0] ?? ""})`, height: "100vh", width: "100vw" }}>
-				<Dashboard />
+			<div className="text-white" style={{ height: "100vh", width: "100vw" }}>
+				<img className="absolute top-0 left-0 object-fill" style={{ zIndex: -1, width: "100vw", height: "100vh" }} src={data?.projects[1]?.images[0] ?? ""} />
+				<div className="bg-black bg-opacity-60 text-white" style={{ height: "100vh", width: "100vw" }}>
+					<Dashboard />
+				</div>
 			</div>
 		</React.Fragment>
 	);

@@ -7,17 +7,17 @@ module.exports = {
 				xxs: "0.5rem"
 			},
 		},
-		height: {
-			card: "20rem",
+		font: {
+			color: "white"
 		},
-		container: (theme) => ({
-			padding: {
-				default: theme("spacing.4"),
-				sm: theme("spacing.5"),
-				lg: theme("spacing.6"),
-				xl: theme("spacing.8"),
-			},
-		}),
+		// container: (theme) => ({
+		// 	padding: {
+		// 		default: theme("spacing.4"),
+		// 		sm: theme("spacing.5"),
+		// 		lg: theme("spacing.6"),
+		// 		xl: theme("spacing.8"),
+		// 	},
+		// }),
 		scale: {
 			"200": "2",
 			"250": "2.5"

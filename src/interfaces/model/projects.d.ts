@@ -3,8 +3,9 @@ interface IProject {
 	desc: string
 	images: string[]
 	video: string
-	roles: string
+	roles: string[]
 	stacks: string[]
+	link?: string
 }
 
 type ProjectState = {

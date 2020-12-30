@@ -17,17 +17,20 @@ export const getProject = (project: IProject): (dispatch: DispatchType) => void 
 	return callApi(action);
 };
 
-export const changeFocus = (which: "NEXT" | "PREV"): (dispatch: DispatchType) => void => (dispatch: DispatchType) => {
+export const changeFocus = (which: "NEXT" | "PREV" | "ONCLICK", payload?: IProject): (dispatch: DispatchType) => void => (dispatch: DispatchType) => {
 	let type = ProjectActionType.LOADING;
 
 	if (which === "NEXT") {
 		type = ProjectActionType.GET_NEXT_PROJECT;
-	} else {
+	} else if (which === "PREV") {
 		type = ProjectActionType.GET_PREV_PROJECT;
+	} else {
+		type = ProjectActionType.GET_PROJECT_FOCUS;
 	}
 
 	dispatch({
 		type: type,
+		payload
 	});
 };
 

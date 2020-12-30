@@ -25,6 +25,17 @@ export const reducer = (state: ProjectState = initialState, action: ProjectActio
 		newArr.unshift(state.projects[(state.projects.length - 1)]);
 		return { ...state, projects: newArr };
 	}
+	case ProjectActionType.GET_PROJECT_FOCUS: {
+		if (action.payload) {
+			const idx = state.projects.findIndex(el => el.title === (action.payload as IProject).title);
+			const newArr = state.projects.slice();
+			// const oldArr = state.projects[1];
+			newArr[1] = state.projects[idx];
+			newArr[idx] = state.projects[1];
+			return { ...state, projects: newArr };
+		}
+		break;
+	}
 	case ProjectActionType.GET_ONE_SUCCESS:
 		if (action.payload) {
 			return { ...state, loading: false, project: action.payload as IProject };
