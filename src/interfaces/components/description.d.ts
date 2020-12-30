@@ -1,0 +1,3 @@
+interface IDescription {
+	data: IProject;
+}

@@ -1,13 +1,8 @@
 import React from "react";
 import { MyImage } from "../..";
 
-interface CardProps {
-	id: number;
-	navigate: (e: React.KeyboardEvent<HTMLDivElement>) => void;
-}
-
-const Card = (props: CardProps): JSX.Element => {
-	const { id, navigate } = props;
+const Card = (props: ICard): JSX.Element => {
+	const { id, navigate, data } = props;
 	const [ names, setNames ] = React.useState<string>("relative rounded-3xl p-2");
 	const myRef = React.createRef<HTMLDivElement>();
 
@@ -28,7 +23,7 @@ const Card = (props: CardProps): JSX.Element => {
 
 	return (
 		<div className={names} style={{ outline: "none" }} ref={myRef} tabIndex={id} onKeyDown={navigate}>
-			<MyImage size="m" type="card" source="https://i.imgur.com/FO5BOft.png" id={id}/>
+			<MyImage size="m" type="card" source={data.images[0]} id={id}/>
 			{ id === 1 &&
 				<i className="fas fa-dot-circle absolute top-5 right-5 text-white"></i>
 			}

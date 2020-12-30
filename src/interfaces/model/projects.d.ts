@@ -15,13 +15,6 @@ type ProjectState = {
 	message?: string
 }
 
-enum ProjectActionType {
-	LOADING = "get_all",
-	FAIL = "fail",
-	GET_ALL_SUCCESS = "success",
-	GET_ONE_SUCCESS = "success_one"
-}
-
 type Payload = IProject | IProject[] | string
 
 type ProjectAction = {

@@ -1,10 +1,12 @@
+import { ProjectActionType } from "../../interfaces/model/store";
+
 const initialState: ProjectState = {
 	projects: [],
 	isError: false,
-	loading: false,
+	loading: true,
 };
 
-const reducer = (state: ProjectState = initialState, action: ProjectAction): ProjectState => {
+export const reducer = (state: ProjectState = initialState, action: ProjectAction): ProjectState => {
 	switch (action.type) {
 	case ProjectActionType.LOADING:
 		return { ...state, loading: true };
@@ -13,6 +15,16 @@ const reducer = (state: ProjectState = initialState, action: ProjectAction): Pro
 			return { ...state, loading: false, projects: action.payload as IProject[] };
 		}
 		break;
+	case ProjectActionType.GET_NEXT_PROJECT: {
+		const newArr = state.projects.filter((_el, i) => i !== 0);
+		newArr.push(state.projects[0]);
+		return { ...state, projects: newArr };
+	}
+	case ProjectActionType.GET_PREV_PROJECT: {
+		const newArr = state.projects.filter((_el, i, arr) => i !== (arr.length - 1));
+		newArr.unshift(state.projects[(state.projects.length - 1)]);
+		return { ...state, projects: newArr };
+	}
 	case ProjectActionType.GET_ONE_SUCCESS:
 		if (action.payload) {
 			return { ...state, loading: false, project: action.payload as IProject };
@@ -23,5 +35,3 @@ const reducer = (state: ProjectState = initialState, action: ProjectAction): Pro
 	}
 	return initialState;
 };
-
-export { reducer as ProjectReducer };
