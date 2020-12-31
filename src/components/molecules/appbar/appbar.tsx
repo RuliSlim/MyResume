@@ -11,7 +11,7 @@ const Hud = React.lazy(() => import("../hud/hud"));
 const Appbar = (): JSX.Element => {
 	const image: MyImageProps = {
 		size: "m",
-		source: "https://cdn.dribbble.com/users/391355/avatars/normal/d436f7d2501bfc9237f6212d34a9a36c.jpeg?1582630643",
+		source: "https://scontent-cgk1-2.xx.fbcdn.net/v/t31.0-8/1052791_289584651186999_1046406688_o.jpg?_nc_cat=102&ccb=2&_nc_sid=cdbe9c&_nc_eui2=AeF_6SqgRFPQp21CDGd0FzDyzK6t1QAXDIPMrq3VABcMgxgLucRn2tcyuK-tYTsV9lUwHhLlkHQOtokpv76Ge0t2&_nc_ohc=RwzrNGT9jGIAX_LHI7a&_nc_ht=scontent-cgk1-2.xx&oh=76a8a8bf2aabf4da9736ae20fc3e8673&oe=601298F7",
 		type: "avatar"
 	};
 

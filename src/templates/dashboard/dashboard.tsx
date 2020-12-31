@@ -22,7 +22,7 @@ const Dashboard = (): JSX.Element => {
 	const dispatch = useDispatch();
 	const data: ProjectState = useSelector((state: RootStore) => state.project);
 	const screen = useDevice();
-	const height = screen.device.isMobile ? "120vh" : "100vh";
+	const height = screen.device.isMobile ? "120vh" : "110vh";
 
 	const navigate = (e: React.KeyboardEvent<HTMLDivElement>): void => {
 		if (e.which === 37) {
@@ -34,7 +34,6 @@ const Dashboard = (): JSX.Element => {
 
 	const handler = useSwipeable({
 		onSwipedLeft: () => {
-			console.log("masuk siniiginsada>>>!!!");
 			dispatch(changeFocus("NEXT"));
 		},
 		onSwipedRight: () => dispatch(changeFocus("PREV")),
@@ -43,7 +42,9 @@ const Dashboard = (): JSX.Element => {
 	});
 
 	React.useEffect(() => {
-		dispatch(getAllProjects());
+		if (!data.projects.length) {
+			dispatch(getAllProjects());
+		}
 	}, [ ]);
 
 	if (data.loading) {

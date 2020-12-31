@@ -7,6 +7,9 @@ export { default as MyText } from "./atoms/text/text";
 // link
 export { default as Link } from "./atoms/link/link";
 
+// Loading
+export { default as Loading } from "./atoms/loading/loading";
+
 // molecules
 export { default as Hud } from "./molecules/hud/hud";
 export { default as Social } from "./molecules/social/social";

@@ -8,7 +8,7 @@ const MyImage = (props: MyImageProps): JSX.Element => {
 	const createClassName = (): void => {
 		let name = "";
 		if (type === "avatar") {
-			name = "rounded-full h-10 w-10 md:w-16 md:h-16 flex items-center justify-center";
+			name = "rounded-full h-10 w-10 md:w-16 md:h-16 object-fill object-center flex items-center justify-center";
 		} else if (type === "icon") {
 			name = "h-4 w-4 md:h-8 md:w-8 flex items-center justify-center";
 		} else {

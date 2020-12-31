@@ -11,7 +11,7 @@ const Category = (): JSX.Element => {
 			isActive: false,
 		},
 		{
-			title: "My Projects",
+			title: "Project",
 			isActive: true
 		},
 		{
