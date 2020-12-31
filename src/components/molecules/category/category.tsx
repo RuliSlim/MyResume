@@ -31,7 +31,7 @@ const Category = (): JSX.Element => {
 	};
 
 	return (
-		<div className="flex flex-row items-center justify-between w-1/2 md:w-1/3">
+		<div className="flex flex-row items-center justify-between w-1/10 md:w-1/3">
 			<i className="fas fa-chevron-left flex-1"></i>
 			<div className="flex flex-row items-center w-full">
 				{links.map((el, key) => (

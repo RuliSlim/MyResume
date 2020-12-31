@@ -49,7 +49,7 @@ const Dashboard = (): JSX.Element => {
 				<div className="my-10 container mx-auto p-5 md:p-0">
 					<Category />
 				</div>
-				<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-48 items-center">
+				<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-20 md:-mx-48 items-center">
 					{data.projects.map((el, idx) => (
 						<React.Fragment key={idx}>
 							<AnimateOnChange

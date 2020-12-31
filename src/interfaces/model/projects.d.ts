@@ -6,6 +6,7 @@ interface IProject {
 	roles: string[]
 	stacks: string[]
 	link?: string
+	tips?: string
 }
 
 type ProjectState = {

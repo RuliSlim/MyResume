@@ -27,11 +27,8 @@ export const reducer = (state: ProjectState = initialState, action: ProjectActio
 	}
 	case ProjectActionType.GET_PROJECT_FOCUS: {
 		if (action.payload) {
-			const idx = state.projects.findIndex(el => el.title === (action.payload as IProject).title);
-			const newArr = state.projects.slice();
-			// const oldArr = state.projects[1];
-			newArr[1] = state.projects[idx];
-			newArr[idx] = state.projects[1];
+			const newArr = state.projects.filter((el) => el.title !== (action.payload as IProject).title);
+			newArr.splice(1, 0, (action.payload as IProject) );
 			return { ...state, projects: newArr };
 		}
 		break;

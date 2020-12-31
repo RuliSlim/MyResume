@@ -15,7 +15,7 @@ export const projectsDummy: IProject[] = [
 		roles: [ "Web design", "Frontend" ],
 		stacks: [ "ReactJS", "React Redux", "TailwindCSS" ],
 		video: "video",
-		link: ""
+		tips: "press arrow on the keyboard to switch the projects"
 	},
 	{
 		title: "Fastpedia",
@@ -40,6 +40,16 @@ export const projectsDummy: IProject[] = [
 		],
 		roles: [ "Frontend Engineer" ],
 		stacks: [ "ReactJS", "React Redux", "MaterialUI" ],
+		video: "video"
+	},
+	{
+		title: "Keturker",
+		desc: "This is a webapp that i develop using React JS. This webapp develop intended for my final project while at hacktive. This webapp using web crawler puppeter to standarized the value of goods.",
+		images: [
+			"https://i.imgur.com/fsdQlPi.jpg",
+		],
+		roles: [ "Fullstack Engineer" ],
+		stacks: [ "ReactJS", "ExpressJS", "GrapQL", "Mongodb" ],
 		video: "video"
 	},
 ];
