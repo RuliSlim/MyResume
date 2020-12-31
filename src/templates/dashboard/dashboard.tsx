@@ -9,6 +9,8 @@ import Category from "../../components/molecules/category/category";
 //@ts-ignore
 import { AnimateOnChange, easings } from "react-animation";
 import { changeFocus, getAllProjects } from "../../store/project/actionCreators";
+import { useDevice } from "../../hooks/device";
+import { useSwipeable } from "react-swipeable";
 
 const style = {
 	animation: `pop-in ${easings.easeOutExpo} 5000ms forwards`
@@ -19,6 +21,8 @@ const Appbar = React.lazy(() => import("../../components/molecules/appbar/appbar
 const Dashboard = (): JSX.Element => {
 	const dispatch = useDispatch();
 	const data: ProjectState = useSelector((state: RootStore) => state.project);
+	const screen = useDevice();
+	const height = screen.device.isMobile ? "120vh" : "100vh";
 
 	const navigate = (e: React.KeyboardEvent<HTMLDivElement>): void => {
 		if (e.which === 37) {
@@ -28,19 +32,25 @@ const Dashboard = (): JSX.Element => {
 		}
 	};
 
+	const handler = useSwipeable({
+		onSwipedLeft: () => {
+			console.log("masuk siniiginsada>>>!!!");
+			dispatch(changeFocus("NEXT"));
+		},
+		onSwipedRight: () => dispatch(changeFocus("PREV")),
+		preventDefaultTouchmoveEvent: true,
+		trackMouse: true
+	});
+
 	React.useEffect(() => {
 		dispatch(getAllProjects());
 	}, [ ]);
-
-	React.useEffect(() => {
-		console.log(data, "INI DATA ON UPD");
-	}, [ data ]);
 
 	if (data.loading) {
 		return <div>loading</div>;
 	} else {
 		return (
-			<div className="flex flex-col pt-2 md:pt-14 space-y-10 overflow-x-hidden h-screen">
+			<div className="flex flex-col pt-2 md:pt-14 space-y-2 md:space-y-8 overflow-x-hidden" style={{ height: height }}>
 				<div className="container mx-auto p-5 md:p-0">
 					<React.Suspense fallback={<div>Loading...</div>}>
 						<Appbar />
@@ -49,7 +59,7 @@ const Dashboard = (): JSX.Element => {
 				<div className="my-10 container mx-auto p-5 md:p-0">
 					<Category />
 				</div>
-				<div className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-20 md:-mx-48 items-center">
+				<div {...handler} className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-20 md:-mx-48 items-center">
 					{data.projects.map((el, idx) => (
 						<React.Fragment key={idx}>
 							<AnimateOnChange

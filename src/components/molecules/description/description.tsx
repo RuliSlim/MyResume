@@ -3,10 +3,12 @@ import React from "react";
 import { MyText } from "../..";
 //@ts-ignore
 import { Rotate } from "react-reveal";
+import { useDevice } from "../../../hooks/device";
 
 const Description = (props: IDescription): JSX.Element => {
 	const { data } = props;
 	const { title, desc, roles, stacks, tips } = data;
+	const screen = useDevice();
 
 	return (
 		<div className="flex flex-col space-y-5">
@@ -14,7 +16,7 @@ const Description = (props: IDescription): JSX.Element => {
 				<MyText text={title} type="title" weight="bold" />
 				<i className="fas fa-dot-circle "></i>
 			</div>
-			<div className="flex flex-row text-left">
+			<div className={`flex ${screen.device.isMobile ? "flex-col" : "flex-row"} text-left`}>
 				<div className="flex-1 space-y-2 h-4/12">
 					<MyText text="description" type="caption" weight="light" />
 					<Rotate bottom right cascade duration={3000}>

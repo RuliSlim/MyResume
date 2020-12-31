@@ -1,7 +1,12 @@
 import React from "react";
-import { Connection, Hud, Social } from "../..";
+import { Social } from "../..";
 import { MyImageProps } from "../../../interfaces/image";
 import { MyTextProps } from "../../../interfaces/text";
+
+// const Appbar = React.lazy(() => import("../../components/molecules/appbar/appbar"));
+
+const Connection = React.lazy(() => import("../connection/connection"));
+const Hud = React.lazy(() => import("../hud/hud"));
 
 const Appbar = (): JSX.Element => {
 	const image: MyImageProps = {
