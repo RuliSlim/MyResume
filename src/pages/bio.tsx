@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Bio = (): JSX.Element => {
 	const [ animate, setAnimate ] = React.useState<string>("");
-	const desc = "I am software engineer with 1 year of experience and a proven knowledge of web development either frontend or backend and mobile development.";
+	const desc = "I am software engineer with 3 year of experience and a proven knowledge of web development frontend, backend and mobile development.";
 
 	React.useEffect(() => {
 		setTimeout(() => {
