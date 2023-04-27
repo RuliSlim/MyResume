@@ -18,8 +18,8 @@ const Connection = (): JSX.Element => {
 	}, []);
 
 	return (
-		<div className="flex flex-row justify-end items-center h-auto w-auto space-x-2">
-			<i className="fas fa-wifi"></i>
+		<div className="self-start h-auto w-auto space-x-2">
+			{/* <i className="fas fa-wifi"></i> */}
 			<MyText text={`${hour}:${time}`} weight="normal" type="normal" />
 		</div>
 	);

@@ -51,16 +51,16 @@ const Dashboard = (): JSX.Element => {
 		return <div>loading</div>;
 	} else {
 		return (
-			<div className="flex flex-col pt-2 md:pt-14 space-y-2 md:space-y-8 overflow-x-hidden" style={{ height: height }}>
-				<div className="container mx-auto p-5 md:p-0">
+			<div className="flex flex-col pt-2 md:pt-14 space-y-4 md:space-y-8 overflow-x-hidden">
+				<div className="container mx-auto px-5 md:px-20">
 					<React.Suspense fallback={<div>Loading...</div>}>
 						<Appbar />
 					</React.Suspense>
 				</div>
-				<div className="my-10 container mx-auto p-5 md:p-0">
+				<div className="md:my-10 md:container md:mx-auto px-5 md:px-20">
 					<Category />
 				</div>
-				<div {...handler} className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-20 md:-mx-48 items-center">
+				<div {...handler} className="flex flex-row overflow-hidden flex-nowrap space-x-8 h-auto max-w-none -mx-10 items-center">
 					{data.projects.map((el, idx) => (
 						<React.Fragment key={idx}>
 							<AnimateOnChange
@@ -76,7 +76,7 @@ const Dashboard = (): JSX.Element => {
 						</React.Fragment>
 					))}
 				</div>
-				<div className="container mx-auto p-5 md:p-0">
+				<div className="container mx-auto px-5 md:px-20">
 					<Description data={data.projects[1]}/>
 				</div>
 			</div>

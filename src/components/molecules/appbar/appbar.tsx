@@ -63,9 +63,9 @@ const Appbar = (): JSX.Element => {
 			{/* <div className="flex-1">
 				<Social icons={social}/>
 			</div> */}
-			<div className="">
-				<Connection />
-			</div>
+			<Connection />
+			{/* <div className="">
+			</div> */}
 		</div>
 	);
 };

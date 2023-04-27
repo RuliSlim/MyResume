@@ -31,11 +31,11 @@ const Category = (): JSX.Element => {
 	};
 
 	return (
-		<div className="flex flex-row items-center justify-between w-1/10 md:w-1/3">
-			<i className="fas fa-chevron-left flex-1"></i>
-			<div className="flex flex-row items-center w-full">
+		<div className="flex flex-row  md:w-1/3">
+			{/* <i className="fas fa-chevron-left flex-1"></i> */}
+			<div className="flex flex-row w-full space-x-2">
 				{links.map((el, key) => (
-					<div className="flex-1 text-center" key={el + "-" + key}>
+					<div className="text-center" key={el + "-" + key}>
 						<AnimateOnChange
 							animationIn="bounceIn"
 							animationOut="bounceOut"
@@ -46,7 +46,7 @@ const Category = (): JSX.Element => {
 					</div>
 				))}
 			</div>
-			<i className="fas fa-chevron-right float-right flex-1"></i>
+			{/* <i className="fas fa-chevron-right float-right flex-1"></i> */}
 		</div>
 	);
 };

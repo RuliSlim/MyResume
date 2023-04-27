@@ -26,9 +26,9 @@ const App = (): JSX.Element => {
 	} else {
 		return (
 			<React.Fragment>
-				<div className="text-white" style={{ height: "100vh", width: "100vw" }}>
-					<img className="absolute top-0 left-0 object-fill" style={{ zIndex: -1, width: "100vw", height: height }} src={image} />
-					<div className="bg-black bg-opacity-60 text-white" style={{ height: height, width: "100vw" }}>
+				<div className="text-white min-h-screen" style={{ backgroundImage: `url("${image}")`, backgroundRepeat: "no-repeat", backgroundAttachment: "scroll", backgroundPosition: "center" }}>
+					{/* <img className="absolute top-0 left-0 object-fill min-h-screen w-full" style={{ zIndex: -1 }} src={image} /> */}
+					<div className="bg-black bg-opacity-60 min-h-screen">
 						<BrowserRouter>
 							<Suspense fallback={<Loading />}>
 								<Route exact path="/" component={Bio} />
