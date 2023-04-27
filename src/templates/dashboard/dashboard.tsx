@@ -76,7 +76,7 @@ const Dashboard = (): JSX.Element => {
 						</React.Fragment>
 					))}
 				</div>
-				<div className="container mx-auto px-5 md:px-20">
+				<div className="container overflow-hidden mx-auto px-5 md:px-20">
 					<Description data={data.projects[1]}/>
 				</div>
 			</div>
